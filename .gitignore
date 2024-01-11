@@ -135,3 +135,4 @@ coverage/
 *.*.dart
 *.env
 pubspec_overrides.yaml
+config.json

@@ -10,7 +10,7 @@
         "--flavor",
         "development",
         "--debug",
-        "--dart-define=API_KEY=75b02a06221d4675b409e8b0e326659b",
+        "--dart-define-from-file=config.json"
       ]
     },
     {
@@ -22,7 +22,8 @@
         "--flavor",
         "development",
         "--release",
-        "--dart-define=apiLoggerEnabled=false"
+        "--dart-define=apiLoggerEnabled=false",
+        "--dart-define-from-file=config.json"
       ]
     },
     {
@@ -33,7 +34,8 @@
       "args": [
         "--flavor",
         "staging",
-        "--debug"
+        "--debug",
+        "--dart-define-from-file=config.json"
       ]
     },
     {
@@ -44,7 +46,8 @@
       "args": [
         "--flavor",
         "staging",
-        "--release"
+        "--release",
+        "--dart-define-from-file=config.json"
       ]
     },
     {
@@ -55,7 +58,8 @@
       "args": [
         "--flavor",
         "production",
-        "--debug"
+        "--debug",
+        "--dart-define-from-file=config.json"
       ]
     },
     {
@@ -66,7 +70,8 @@
       "args": [
         "--flavor",
         "production",
-        "--release"
+        "--release",
+        "--dart-define-from-file=config.json"
       ]
     },
   ]
