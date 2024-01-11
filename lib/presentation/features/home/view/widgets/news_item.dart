@@ -29,7 +29,7 @@ class NewsItem extends StatelessWidget {
               width: 3,
             ),
             borderRadius: const BorderRadius.all(
-              Radius.circular(15), // Also set the same radius to the border
+              Radius.circular(15),
             ),
           ),
           child: Padding(
@@ -55,7 +55,7 @@ class NewsItem extends StatelessWidget {
                           constraints: const BoxConstraints(maxHeight: 120),
                           child: Text(
                             _article.title ?? '',
-                            style: Theme.of(context).textTheme.titleLarge,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),
                         const SizedBox(height: 10),
