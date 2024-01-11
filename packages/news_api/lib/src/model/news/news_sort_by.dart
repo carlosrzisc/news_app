@@ -9,4 +9,6 @@ enum NewsSortBy {
 
   @override
   String toString() => _value;
+
+  String toJson() => _value;
 }

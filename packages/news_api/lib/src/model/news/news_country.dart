@@ -60,4 +60,6 @@ enum NewsCountry {
 
   @override
   String toString() => _value;
+
+  String toJson() => _value;
 }

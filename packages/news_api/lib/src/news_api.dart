@@ -4,13 +4,6 @@ import 'package:news_api/src/cache/cache_options.dart';
 import 'package:news_api/src/logger/logger_interceptor.dart';
 import 'package:news_api/src/model/api_endpoints.dart';
 import 'package:news_api/src/model/model.dart';
-import 'package:news_api/src/model/news/news_category.dart';
-import 'package:news_api/src/model/news/news_country.dart';
-import 'package:news_api/src/model/news/news_date_time.dart';
-import 'package:news_api/src/model/news/news_language.dart';
-import 'package:news_api/src/model/news/news_search_in.dart';
-import 'package:news_api/src/model/news/news_sort_by.dart';
-import 'package:news_api/src/model/news/sources_response.dart';
 import 'package:retrofit/http.dart';
 
 part 'news_api.g.dart';

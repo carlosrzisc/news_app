@@ -43,4 +43,8 @@ class SourceList extends ListBase<Source> {
   String toString() {
     return _innerList.map((item) => item.id).whereType<String>().join(', ');
   }
+
+  String toJson() {
+    return _innerList.map((item) => item.toString()).join(',');
+  }
 }

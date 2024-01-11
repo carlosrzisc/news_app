@@ -36,4 +36,8 @@ class NewsSearchInList extends ListBase<NewsSearchIn> {
   String toString() {
     return _innerList.map((item) => item.toString()).join(', ');
   }
+
+  String toJson() {
+    return _innerList.map((item) => item.toString()).join(',');
+  }
 }

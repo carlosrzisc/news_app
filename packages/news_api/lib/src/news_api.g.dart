@@ -23,28 +23,24 @@ class _NewsApi implements NewsApi {
   @override
   Future<NewsResponse> getEverything({
     String? query,
-    String? searchIn,
-    String? sources,
-    String? domains,
-    String? excludeDomains,
-    String? from,
-    String? to,
-    String? language,
-    String? sortBy,
+    NewsSearchInList? searchIn,
+    SourceList? sources,
+    NewsDateTime? from,
+    NewsDateTime? to,
+    NewsLanguage? language,
+    NewsSortBy? sortBy,
     int? pageSize,
     int? page,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'q': query,
-      r'searchIn': searchIn,
-      r'sources': sources,
-      r'domains': domains,
-      r'excludeDomains': excludeDomains,
-      r'from': from,
-      r'to': to,
-      r'language': language,
-      r'sortBy': sortBy,
+      r'searchIn': searchIn?.toJson(),
+      r'sources': sources?.toJson(),
+      r'from': from?.toJson(),
+      r'to': to?.toJson(),
+      r'language': language?.toJson(),
+      r'sortBy': sortBy?.toJson(),
       r'pageSize': pageSize,
       r'page': page,
     };
@@ -74,19 +70,19 @@ class _NewsApi implements NewsApi {
 
   @override
   Future<NewsResponse> getTopHeadlines({
-    String? country,
-    String? criteria,
-    String? sources,
     String? query,
+    NewsCountry? country,
+    NewsCategory? category,
+    SourceList? sources,
     int? pageSize,
     int? page,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'country': country,
-      r'category': criteria,
-      r'sources': sources,
       r'q': query,
+      r'country': country?.toJson(),
+      r'category': category?.name,
+      r'sources': sources?.toJson(),
       r'pageSize': pageSize,
       r'page': page,
     };
@@ -116,15 +112,15 @@ class _NewsApi implements NewsApi {
 
   @override
   Future<SourcesResponse> getSources({
-    String? criteria,
-    String? language,
-    String? country,
+    NewsCategory? category,
+    NewsLanguage? language,
+    NewsCountry? country,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'category': criteria,
-      r'language': language,
-      r'country': country,
+      r'category': category?.name,
+      r'language': language?.toJson(),
+      r'country': country?.toJson(),
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

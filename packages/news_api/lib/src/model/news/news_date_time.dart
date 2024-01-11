@@ -4,4 +4,6 @@ class NewsDateTime extends DateTime {
 
   @override
   String toString() => toIso8601String();
+
+  String toJson() => toString();
 }
