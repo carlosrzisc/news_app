@@ -74,7 +74,7 @@ class NewsItem extends StatelessWidget {
                   width: 120,
                   height: 200,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(11),
+                    borderRadius: BorderRadius.circular(9),
                     child: image != null
                         ? Hero(
                             tag: 'image-${_article.url}',

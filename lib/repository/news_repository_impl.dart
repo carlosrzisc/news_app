@@ -6,7 +6,14 @@ import 'package:rxdart/rxdart.dart';
 
 @LazySingleton(as: NewsRepository)
 class NewsRepositoryImpl implements NewsRepository {
-  NewsRepositoryImpl(this._newsApi);
+  NewsRepositoryImpl(this._newsApi) {
+    Timer.periodic(const Duration(minutes: 4), (_) {
+      page = 1;
+      _newsController.add([]);
+      loadMore();
+    });
+  }
+
   final NewsApi _newsApi;
   final _newsController = BehaviorSubject<List<Article>>();
   int page = 1;
