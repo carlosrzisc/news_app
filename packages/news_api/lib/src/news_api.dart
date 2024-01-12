@@ -1,9 +1,9 @@
+import 'package:app_model/app_model.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:news_api/src/cache/cache_options.dart';
 import 'package:news_api/src/logger/logger_interceptor.dart';
 import 'package:news_api/src/model/api_endpoints.dart';
-import 'package:news_api/src/model/model.dart';
 import 'package:retrofit/http.dart';
 
 part 'news_api.g.dart';

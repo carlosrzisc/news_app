@@ -1,6 +1,6 @@
 {
     "@@locale": "es",
     "takingLong": "Esto esta tomando mas tiempo de lo esperado",
-    "genericError": "Algo salió mal.",
+    "genericError": "Algo salió mal, asegurate de tener coneccion a internet y configurar tu api key",
     "search": "Buscar"
 }

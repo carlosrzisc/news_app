@@ -1,6 +1,6 @@
 {
     "@@locale": "en",
     "takingLong": "This is taking a bit longer than expected.\nPlease be patient.",
-    "genericError": "Something went wrong, make sure to set your api key",
+    "genericError": "Something went wrong, make sure you have internet connection and set your api key",
     "search": "Search"
 }

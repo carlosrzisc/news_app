@@ -1,5 +1,5 @@
+import 'package:app_model/app_model.dart';
 import 'package:injectable/injectable.dart';
-import 'package:news_api/news_api.dart';
 import 'package:news_app/repository/domain/favorites_data_source.dart';
 import 'package:hive/hive.dart';
 import 'package:news_app/repository/domain/hive_storage_objects.dart';

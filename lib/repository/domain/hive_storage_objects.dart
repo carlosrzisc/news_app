@@ -1,5 +1,5 @@
+import 'package:app_model/app_model.dart';
 import 'package:hive/hive.dart';
-import 'package:news_api/news_api.dart';
 
 part 'hive_storage_objects.g.dart';
 

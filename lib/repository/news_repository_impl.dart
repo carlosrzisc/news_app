@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:app_model/app_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:news_api/news_api.dart';
 import 'package:news_app/repository/domain/news_repository.dart';

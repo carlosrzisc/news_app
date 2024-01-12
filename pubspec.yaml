@@ -26,6 +26,8 @@ dependencies:
   
   news_api:
     path: packages/news_api
+  app_model:
+    path: packages/app_model
   app_ui:
     path: packages/app_ui
 

@@ -1,4 +1,4 @@
-import 'package:news_api/news_api.dart';
+import 'package:app_model/app_model.dart';
 
 abstract class FavoritesDataSource {
   Future<List<Article>> getFavorites();
