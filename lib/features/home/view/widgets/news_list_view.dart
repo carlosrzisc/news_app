@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_api/news_api.dart';
-import 'package:news_app/presentation/features/home/bloc/home_bloc.dart';
-import 'package:news_app/presentation/features/home/view/widgets/news_item.dart';
+import 'package:news_app/features/home/bloc/home_bloc.dart';
+import 'package:news_app/features/home/view/widgets/news_item/presenter/news_item_presenter.dart';
 
 class NewsListView extends StatefulWidget {
   const NewsListView(
@@ -30,8 +30,8 @@ class _NewsListViewState extends State<NewsListView> {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: widget.newsList.length,
-      padding: const EdgeInsets.only(top: 130),
-      itemBuilder: (_, index) => NewsItem(
+      padding: const EdgeInsets.only(top: 130, bottom: 40),
+      itemBuilder: (_, index) => NewsItemPresenter(
         widget.newsList[index],
         onTap: () => widget.onTap?.call(widget.newsList[index]),
       ),

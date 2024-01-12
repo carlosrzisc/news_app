@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:news_app/presentation/utilities/widget_keys.dart';
+import 'package:app_ui/src/widgets/widget_keys.dart';
 
 class AppLoading {
   AppLoading._();

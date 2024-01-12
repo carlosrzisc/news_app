@@ -4,8 +4,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:news_app/app/routing/app_router.dart';
-import 'package:news_app/presentation/features/loading/loading_screen.dart';
-import 'package:news_app/presentation/features/splash/bloc/splash_bloc.dart';
+import 'package:news_app/features/loading/loading_screen.dart';
+import 'package:news_app/features/splash/bloc/splash_bloc.dart';
 
 @RoutePage()
 class SplashScreen extends StatelessWidget {

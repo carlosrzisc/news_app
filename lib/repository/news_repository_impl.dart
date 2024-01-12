@@ -28,7 +28,12 @@ class NewsRepositoryImpl implements NewsRepository {
     if (hasReachedMax) return;
 
     try {
-      final result = (await _newsApi.getTopHeadlines(country: NewsCountry.unitedStates)).articles;
+      final result = (await _newsApi.getTopHeadlines(
+        country: NewsCountry.unitedStates,
+        page: page,
+        pageSize: _limit,
+      ))
+          .articles;
       if (result == null) {
         _newsController.addError(Exception('Error fetching news'));
         return;
@@ -38,7 +43,14 @@ class NewsRepositoryImpl implements NewsRepository {
       final currentList = _newsController.hasValue ? _newsController.value : <Article>[];
       hasReachedMax = result.length < _limit;
 
-      _newsController.add([...currentList, ...result]);
+      _newsController.add(
+        [
+          ...currentList,
+          ...result.where(
+            (element) => !(element.url?.contains('removed.com') ?? true),
+          ),
+        ],
+      );
     } catch (e) {
       _newsController.addError(e);
     }

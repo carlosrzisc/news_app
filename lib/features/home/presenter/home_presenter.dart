@@ -1,13 +1,12 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:news_api/news_api.dart';
 import 'package:news_app/l10n/l10n.dart';
-import 'package:news_app/presentation/features/home/bloc/home_bloc.dart';
-import 'package:news_app/presentation/features/home/view/widgets/news_input_search.dart';
-import 'package:news_app/presentation/features/home/view/widgets/news_list_view.dart';
-import 'package:news_app/presentation/features/loading/loading_screen.dart';
+import 'package:news_app/features/home/bloc/home_bloc.dart';
+import 'package:news_app/features/home/view/widgets/news_input_search.dart';
+import 'package:news_app/features/home/view/widgets/news_list_view.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class HomePresenter extends StatelessWidget {
   const HomePresenter({super.key});
@@ -18,20 +17,15 @@ class HomePresenter extends StatelessWidget {
       create: (context) => GetIt.I.get<HomeBloc>()
         ..add(const HomeEvent.subscriptionRequested())
         ..add(const HomeEvent.load()),
-      child: BlocConsumer<HomeBloc, HomeState>(
-        listener: (context, state) {
-          state.maybeWhen(
-            loadInProgress: () => AppLoading.showLoading(context),
-            orElse: context.router.pop, // dismiss loading animation
-          );
-        },
+      child: BlocBuilder<HomeBloc, HomeState>(
+        buildWhen: (previous, current) => current is! LoadInProgress && current is! ArticlesNotFound,
         builder: (context, state) {
           return Stack(
             children: [
               state.maybeWhen(
                 loadSuccess: (newsList) => NewsListView(
                   newsList,
-                  onTap: (article) => _onArticleSelected(context, article),
+                  onTap: _onArticleSelected,
                 ),
                 loadFailure: () => Center(
                   child: Padding(
@@ -53,10 +47,14 @@ class HomePresenter extends StatelessWidget {
             ],
           );
         },
-        buildWhen: (previous, current) => current is! LoadInProgress && current is! ArticlesNotFound,
       ),
     );
   }
 
-  void _onArticleSelected(BuildContext context, Article article) {}
+  void _onArticleSelected(Article article) {
+    final url = article.url;
+    if (url != null && url.isNotEmpty) {
+      launchUrlString(url);
+    }
+  }
 }

@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:news_app/presentation/features/splash/splash_screen.dart';
-import 'package:news_app/presentation/features/home/home.dart';
-import 'package:flutter/material.dart';
-import 'package:news_api/news_api.dart';
+import 'package:news_app/features/splash/splash_screen.dart';
+import 'package:news_app/features/home/home.dart';
 
 /// Important: If you are passing typed arguments to any screen, you need to manually add the dependency
 /// where the type is defined. Otherwise the auto_route_generator will not generate the required code
