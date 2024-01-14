@@ -1,6 +1,9 @@
 # <img src="/assets/images/app_logo.png" width="30"> Ginger News
 
-Flutter app example that consumes newsapi.org that displays news, save articles in a local database. It has a clean architecture to separate concerns on different layers. Includes unit and widget tests, find those on each package.
+Flutter app example that consumes newsapi.org that displays news, save articles in a local database (```hive``` package). It has a clean architecture to separate concerns on different layers, uses abstraction to make it easy to have dependency injection (thru ```get_it```) thus easily setup unit tests. It uses ```flutter_bloc``` for UI state management, it also have a pagination feature to load more articles as the user scrolls down until the api reaches the maximum. 
+
+- Includes unit and widget tests, find those on each package.
+- Includes a service to refresh the news without user interaction after a period of time.
 
 # Screenshots
 <img src="/screenshots/scr1.png" width="170"> <img src="/screenshots/scr2.png" width="170"> <img src="/screenshots/scr3.png" width="170">
