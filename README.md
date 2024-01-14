@@ -1,9 +1,9 @@
-# Ginger News 📰
+# <img src="/assets/images/app_logo.png" width="30"> Ginger News
 
 Flutter app example that consumes newsapi.org that displays news, save articles in a local database. It has a clean architecture to separate concerns on different layers. Includes unit and widget tests, find those on each package.
 
 # Screenshots
-<img src="/screenshots/scr1.png" width="145"> <img src="/screenshots/scr2.png" width="145"> <img src="/screenshots/scr3.png" width="145">
+<img src="/screenshots/scr1.png" width="170"> <img src="/screenshots/scr2.png" width="170"> <img src="/screenshots/scr3.png" width="170">
 
 ---
 
