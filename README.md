@@ -66,6 +66,9 @@ _\*Ginger News works on iOS, Android, Web, and Windows._
 
 ---
 
+## Author
+- [Carlos Rodriguez](https://github.com/carlosrzisc)
+
 ## Working with Translations 🌐
 
 This project relies on [flutter_localizations][flutter_localizations_link] and follows the [official internationalization guide for Flutter][internationalization_link].
