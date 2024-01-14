@@ -3,9 +3,9 @@
 Flutter app example that consumes newsapi.org that displays news, save articles in a local database. It has a clean architecture to separate concerns on different layers. Includes unit and widget tests, find those on each package.
 
 # Screenshots
-![Loading animation](/screenshots/scr1.png)
-![News list](/screenshots/scr2.png)
-![Favorites list](/screenshots/scr3.png)
+<img src="/screenshots/scr1.png" width="130">
+<img src="/screenshots/scr2.png" width="130">
+<img src="/screenshots/scr3.png" width="130">
 
 ---
 
