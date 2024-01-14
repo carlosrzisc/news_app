@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:app_ui/src/widgets/widget_keys.dart';
 
 class AppLoading {
   AppLoading._();

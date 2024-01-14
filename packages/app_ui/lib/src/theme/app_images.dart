@@ -6,5 +6,6 @@ class AppImages {
   static final newsPlaceholder = Image.asset(
     '${_images}news_placeholder.jpg',
     fit: BoxFit.cover,
+    package: 'app_ui',
   );
 }

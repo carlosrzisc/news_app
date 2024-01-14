@@ -3,6 +3,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/features/news/cubit/news_item_cubit.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class NewsItemPresenter extends StatelessWidget {
   const NewsItemPresenter(
@@ -31,7 +32,7 @@ class NewsItemPresenter extends StatelessWidget {
   void _onArticleSelected(Article article) {
     final url = article.url;
     if (url != null && url.isNotEmpty) {
-      // launchUrlString(url);
+      launchUrlString(url);
     }
   }
 }

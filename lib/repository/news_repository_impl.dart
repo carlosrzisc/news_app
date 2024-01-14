@@ -13,13 +13,17 @@ class NewsRepositoryImpl implements NewsRepository {
       _newsController.add([]);
       loadMore();
     });
+    _newsController.add([]);
   }
 
   final NewsApi _newsApi;
   final _newsController = BehaviorSubject<List<Article>>();
   int page = 1;
-  static const int _limit = 20;
-  bool hasReachedMax = false;
+  static const int limit = 20;
+
+  @override
+  bool get hasReachedMax => _hasReachedMax;
+  bool _hasReachedMax = false;
 
   @override
   Stream<List<Article>> get articles => _newsController.asBroadcastStream();
@@ -32,7 +36,7 @@ class NewsRepositoryImpl implements NewsRepository {
       final result = (await _newsApi.getTopHeadlines(
         country: NewsCountry.unitedStates,
         page: page,
-        pageSize: _limit,
+        pageSize: limit,
       ))
           .articles;
       if (result == null) {
@@ -42,7 +46,7 @@ class NewsRepositoryImpl implements NewsRepository {
 
       page++;
       final currentList = _newsController.hasValue ? _newsController.value : <Article>[];
-      hasReachedMax = result.length < _limit;
+      _hasReachedMax = result.length < limit;
 
       _newsController.add(
         [

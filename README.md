@@ -1,21 +1,43 @@
-# Ginger News
+# Ginger News 📰
 
-Flutter app example that consumes newsapi.org that displays news, save articles in a local database. It has a clean architecture to separate concerns on different layers.
+Flutter app example that consumes newsapi.org that displays news, save articles in a local database. It has a clean architecture to separate concerns on different layers. Includes unit and widget tests, find those on each package.
 
 # Screenshots
 ![Loading animation](/screenshots/scr1.png)
 ![News list](/screenshots/scr2.png)
+![Favorites list](/screenshots/scr3.png)
 
 ---
 
-## Installation
+## Installation 🔧
 
 Execute the following steps to complete the project setup:
 
 1. From a terminal, run the following commands:
-    1. ```flutter pub get```
-    2. ```dart run build_runner build --delete-conflicting-outputs```
-2. Go to ios folder and run:
+    1. Add config.json with your api key in order to fetch data from newsapi.org. 
+    ```
+    {
+        "API_KEY": "<YOUR-API-KEY>"
+    }
+    ```
+    2. Setup "app_model" package.
+        1. cd packages/app_model
+        2. ```flutter pub get```
+        3. ```dart run build_runner build --delete-conflicting-outputs```
+    3. Setup "news_api" package.
+        1. cd packages/news_api
+        2. ```flutter pub get```
+        3. ```dart run build_runner build --delete-conflicting-outputs```
+    4. Setup "app_ui" package.
+        1. cd packages/app_ui
+        2. ```flutter pub get```
+        3. ```dart run build_runner build --delete-conflicting-outputs```
+    4. Setup application.
+        1. cd .
+        2. ```flutter pub get```
+        3. ```dart run build_runner build --delete-conflicting-outputs```
+        
+2. For iOS, go to ios folder and run:
     1. ```pod deintegrate```
     2. ```pod install```
 
@@ -33,13 +55,13 @@ To run the desired flavor either use the launch configuration in VSCode/Android 
 
 ```sh
 # Development
-$ flutter run --flavor development --target lib/main_development.dart
+$ flutter run --flavor development --target lib/main_development.dart --dart-define-from-file=config.json
 
 # Staging
-$ flutter run --flavor staging --target lib/main_staging.dart
+$ flutter run --flavor staging --target lib/main_staging.dart --dart-define-from-file=config.json
 
 # Production
-$ flutter run --flavor production --target lib/main.dart
+$ flutter run --flavor production --target lib/main.dart --dart-define-from-file=config.json
 ```
 
 _\*Ginger News works on iOS, Android, Web, and Windows._
